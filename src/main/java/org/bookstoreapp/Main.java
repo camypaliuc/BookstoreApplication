@@ -14,7 +14,7 @@ public class Main extends Application {
         UserService.loadUsersFromFile();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
-        primaryStage.setTitle("Registration Example");
+        primaryStage.setTitle("Bookstore Application");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
