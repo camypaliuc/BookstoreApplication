@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 import org.bookstoreapp.exceptions.CouldNotWriteUsersException;
 import org.bookstoreapp.exceptions.UsernameAlreadyExistsException;
+import org.bookstoreapp.exceptions.WrongUsernameorPasswordException;
 import org.bookstoreapp.model.User;
 
 import java.io.IOException;
@@ -65,7 +66,15 @@ public class UserService {
         return new String(hashedPassword, StandardCharsets.UTF_8)
                 .replace("\"", ""); //to be able to save in JSON format
     }
-
+    private static void checkUserCredentials(String username, String password) throws WrongUsernameorPasswordException {
+        private int found=0;
+        for (User user : users) {
+            if (Objects.equals(username, user.getUsername()) && Object.equals(encodePassword(username, password), user.getPassword()))
+                found = 1;
+        }
+        if( found ==0)
+            throw new WrongUsernameorPasswordException();
+    }
     private static MessageDigest getMessageDigest() {
         MessageDigest md;
         try {

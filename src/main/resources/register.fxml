@@ -36,7 +36,7 @@
     </HBox>
    <HBox alignment="bottom_right" prefHeight="30.0" prefWidth="295.0" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="7">
       <children>
-         <Button alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #ff3b49; -fx-background-radius: 100PX;" text="Login" textFill="#242222" />
+         <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #ff3b49; -fx-background-radius: 100PX;" text="Login" textFill="#242222" />
       </children>
    </HBox>
    <columnConstraints>
