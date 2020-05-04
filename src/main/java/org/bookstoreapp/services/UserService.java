@@ -66,10 +66,10 @@ public class UserService {
         return new String(hashedPassword, StandardCharsets.UTF_8)
                 .replace("\"", ""); //to be able to save in JSON format
     }
-    private static void checkUserCredentials(String username, String password) throws WrongUsernameorPasswordException {
-        private int found=0;
+    public static void checkUserCredentials(String username, String password) throws WrongUsernameorPasswordException {
+        int found=0;
         for (User user : users) {
-            if (Objects.equals(username, user.getUsername()) && Object.equals(encodePassword(username, password), user.getPassword()))
+            if (Objects.equals(username, user.getUsername()) && Objects.equals(encodePassword(username, password), user.getPassword()))
                 found = 1;
         }
         if( found ==0)
@@ -84,6 +84,5 @@ public class UserService {
         }
         return md;
     }
-
 
 }

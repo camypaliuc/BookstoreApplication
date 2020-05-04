@@ -6,6 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import org.bookstoreapp.exceptions.UsernameAlreadyExistsException;
+import org.bookstoreapp.exceptions.WrongUsernameorPasswordException;
 import org.bookstoreapp.services.UserService;
 
 public class RegistrationController {
@@ -30,6 +31,15 @@ public class RegistrationController {
             UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
             registrationMessage.setText("Account created successfully!");
         } catch (UsernameAlreadyExistsException e) {
+            registrationMessage.setText(e.getMessage());
+        }
+    }
+    @FXML
+    public void handleLoginAction() {
+        try {
+            UserService.checkUserCredentials(usernameField.getText(), passwordField.getText());
+            registrationMessage.setText("You are logged in!");
+        } catch (WrongUsernameorPasswordException e) {
             registrationMessage.setText(e.getMessage());
         }
     }
