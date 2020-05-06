@@ -18,7 +18,6 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 
 public class RegistrationController {
-
     @FXML
     private Text registrationMessage;
     @FXML
@@ -46,14 +45,14 @@ public class RegistrationController {
     public void handleLoginAction(ActionEvent event) throws IOException{
         try {
             UserService.checkUserCredentials(usernameField.getText(), passwordField.getText());
+            Parent home_page_parent=FXMLLoader.load(getClass().getClassLoader().getResource("BookstoreLibrary.fxml"));
+            Scene home_page_scene=new Scene(home_page_parent);
+            Stage app_stage=(Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(home_page_scene);
+            app_stage.show();
         } catch (WrongUsernameorPasswordException e) {
             registrationMessage.setText(e.getMessage());
         }
-        Parent home_page_parent=FXMLLoader.load(getClass().getClassLoader().getResource("BookstoreLibrary.fxml"));
-        Scene home_page_scene=new Scene(home_page_parent);
-        Stage app_stage=(Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.hide();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
     }
 }
