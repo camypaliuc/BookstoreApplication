@@ -30,7 +30,7 @@
     <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
     </ChoiceBox>
 
-    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+    <Text fx:id="registrationMessage" wrappingWidth="60.999998569488525" GridPane.columnIndex="1" GridPane.rowIndex="10" />
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="6">
         <Button alignment="CENTER" onAction="#handleRegisterAction" prefHeight="26.0" prefWidth="154.0" style="-fx-background-radius: 100PX; -fx-background-color: #ff3b49;" text="Register" textFill="#242222" />
     </HBox>

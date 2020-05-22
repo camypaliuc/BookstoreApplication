@@ -76,13 +76,13 @@ public class UserService {
             throw new WrongUsernameorPasswordException();
     }
     private static MessageDigest getMessageDigest() {
-        MessageDigest md;
-        try {
-            md = MessageDigest.getInstance("SHA-512");
-        } catch (NoSuchAlgorithmException e) {
-            throw new IllegalStateException("SHA-512 does not exist!");
-        }
-        return md;
+            MessageDigest md;
+            try {
+                md = MessageDigest.getInstance("SHA-512");
+            } catch (NoSuchAlgorithmException e) {
+                throw new IllegalStateException("SHA-512 does not exist!");
+            }
+            return md;
     }
 
 }
