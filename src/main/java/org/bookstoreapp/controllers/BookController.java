@@ -1,34 +1,59 @@
 package org.bookstoreapp.controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.text.Text;
-import javafx.scene.Parent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.scene.Node;
-import javafx.event.ActionEvent;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+import org.bookstoreapp.model.Book;
+
+import java.io.File;
+import java.util.List;
 
 
 public class BookController {
 
+    private Book book;
+
     @FXML
-    private Text Author;
+    private Text author;
     @FXML
-    private Label Title;
+    private Text title;
     @FXML
-    private Label PriceNumber;
+    private Text priceNumber;
+    @FXML
+    private ImageView imageView;
+    private File imageFile ;
+
+
+    public BookController(Book book) {
+        this.book = book;
+    }
 
     @FXML
     public void initialize() {
-        Author.setText("Dan Brown");
+
+        author.setText(book.getAuthor());
+        title.setText(book.getTitle());
+        priceNumber.setText(String.valueOf(book.getPrice()));
+        imageFile = new File(String.valueOf(book.getUrl()));
+        if (imageFile.exists()) {
+            ImageView imageView = new ImageView();
+            Image image = new Image(imageFile.toURI().toString());
+            imageView.setImage(image);
+        }
     }
 
-    public void handleAddToCartAction(){
+    public void handleAddToCartAction() {
 
+       /* public List<Book> CartBooks;
+        private String author2;
+        private String title2;
+        private double priceNumber2;
+        private int BookContor = 0;
+        author2 = book.getAuthor();
+        title2 = book.getTitle();
+        priceNumber2 = book.getPrice();
+        CartBooks[BookContor] = new Book(author2, title2, priceNumber2);
+        BookContor = BookContor + 1; */
     }
 }

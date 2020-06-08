@@ -1,7 +1,6 @@
 package org.bookstoreapp.model;
 
 
-
 public class Book {
 
     private String author;
@@ -9,9 +8,14 @@ public class Book {
     private Double price;
     private String url;
 
-    public Book() {
+    public Book(){
 
     }
+
+    public Book(String author2, String title2, double priceNumber2) {
+
+    }
+
 
     public Book(String author, String title, double price, String url) {
         this.author = author;
@@ -20,28 +24,36 @@ public class Book {
         this.url = url;
     }
 
-    public String getAuthor() { return author;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAuthor(String author) { this.author = author;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public String getTitle() { return title;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitle(String title) { this.title = title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public double getPrice() { return price;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPrice(double price) { this.price = price;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public String getUrl() { return url;
+    public String getUrl() {
+        return url;
     }
 
-    public void setUrl(String url) { this.url = url;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override

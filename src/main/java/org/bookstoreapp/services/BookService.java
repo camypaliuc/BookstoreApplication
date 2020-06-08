@@ -4,22 +4,19 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 import org.bookstoreapp.exceptions.CouldNotWriteBooksException;
-
 import org.bookstoreapp.model.Book;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
-import java.util.Objects;
 
 
 public class BookService {
-    private static List<Book> books;
     private static final Path BOOKS_PATH = FileSystemService.getPathToFile("config", "books.json");
+    private static List<Book> books;
 
     public static void loadBooksFromFile() throws IOException {
 
@@ -33,9 +30,9 @@ public class BookService {
         });
     }
 
-    public static void addBook(String author, String title, Double price, String url )  {
+    public static void addBook(String author, String title, Double price, String url) {
 
-        books.add(new Book(author, title, price , url));
+        books.add(new Book(author, title, price, url));
         persistBooks();
     }
 
@@ -56,5 +53,9 @@ public class BookService {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
         return md;
+    }
+
+    public static List<Book> getAllBooks() {
+        return books;
     }
 }
