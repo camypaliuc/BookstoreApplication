@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import org.bookstoreapp.model.Book;
+import org.bookstoreapp.services.CartService;
 
 import java.io.File;
 import java.util.List;
@@ -41,19 +42,12 @@ public class BookController {
             Image image = new Image(imageFile.toURI().toString());
             imageView.setImage(image);
         }
+
+
     }
 
     public void handleAddToCartAction() {
+        CartService.AddBooktoCart(book);
 
-       /* public List<Book> CartBooks;
-        private String author2;
-        private String title2;
-        private double priceNumber2;
-        private int BookContor = 0;
-        author2 = book.getAuthor();
-        title2 = book.getTitle();
-        priceNumber2 = book.getPrice();
-        CartBooks[BookContor] = new Book(author2, title2, priceNumber2);
-        BookContor = BookContor + 1; */
     }
 }

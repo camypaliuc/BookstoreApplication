@@ -1,9 +1,14 @@
 package org.bookstoreapp.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import org.bookstoreapp.model.Book;
 import org.bookstoreapp.services.BookService;
 
@@ -23,7 +28,7 @@ public class BookstoreLibraryController {
 
         for (Book book : books) {
 
-            BookController controller = new BookController(book);
+           BookController controller = new BookController(book);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Book.fxml"));
             fxmlLoader.setController(controller);
             AnchorPane bookPane = fxmlLoader.load();
