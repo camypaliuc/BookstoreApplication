@@ -11,12 +11,14 @@
                 <MenuItem mnemonicParsing="false" text="Action 2" />
             </items>
         </MenuButton>
-        <Button layoutX="110.0" layoutY="2.0" mnemonicParsing="false" text="FinnishOrder" />
-        <VBox layoutX="-1.0" layoutY="25.0" prefHeight="376.0" prefWidth="600.0" />
-        <AnchorPane fx:id="booksPane" prefHeight="200.0" prefWidth="200.0">
-            <VBox fx:id="booksVBox">
+        <Button layoutX="110.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleFinishOrderAction" text="FinnishOrder" />
+        <VBox layoutX="-1.0" layoutY="25.0" prefHeight="376.0" prefWidth="600.0">
+         <children>
+              <AnchorPane fx:id="booksPane" prefHeight="216.0" prefWidth="612.0">
+                  <VBox fx:id="booksVBox">
 
             </VBox>
-        </AnchorPane>
+              </AnchorPane>
+         </children></VBox>
     </children>
 </AnchorPane>
