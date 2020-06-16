@@ -1,57 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" style="-fx-background-color: #DEB887;" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bookstoreapp.controllers.RegistrationController">
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" prefHeight="400" prefWidth="600"
+          style="-fx-background-color: #DEB887;"
+          vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal"
+          fx:controller="org.bookstoreapp.controllers.RegistrationController">
     <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
     </padding>
-    <Text id="title-text" fill="#d51414" style="-fx-font-size: 2em; -fx-font-family: Quicksand; -fx-font-weight: bold;" text="Welcome to our Bookstore App!" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
-      <font>
-         <Font size="14.0" />
-      </font></Text>
+    <Text id="title-text" fill="#d51414" style="-fx-font-size: 2em; -fx-font-family: Quicksand; -fx-font-weight: bold;"
+          text="Welcome to our Bookstore App!" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Text>
 
-    <Label style="-fx-font-family: quicksand; -fx-font-weight: bold;" text="Username:" GridPane.rowIndex="2" />
+    <Label style="-fx-font-family: quicksand; -fx-font-weight: bold;" text="Username:" GridPane.columnIndex="1"
+           GridPane.rowIndex="2"/>
 
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2">
-      <GridPane.margin>
-         <Insets />
-      </GridPane.margin></TextField>
+    <TextField fx:id="usernameField" GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <GridPane.margin>
+            <Insets/>
+        </GridPane.margin>
+    </TextField>
 
-    <Label style="-fx-font-weight: bold;" text="Password:" GridPane.rowIndex="3" />
+    <Label style="-fx-font-weight: bold;" text="Password:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
 
-    <Label style="-fx-font-weight: bold;" text="Role:" GridPane.rowIndex="4" />
+    <Label style="-fx-font-weight: bold;" text="Role:" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
 
-    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
     </ChoiceBox>
 
-    <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">
-        <Button alignment="CENTER" onAction="#handleRegisterAction" prefHeight="26.0" prefWidth="154.0" style="-fx-background-radius: 100PX; -fx-background-color: #ff3b49;" text="Register" textFill="#242222" />
+    <Text fx:id="registrationMessage" wrappingWidth="60.999998569488525" GridPane.columnIndex="1"
+          GridPane.rowIndex="10"/>
+    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="6">
+        <Button alignment="CENTER" onAction="#handleRegisterAction" prefHeight="26.0" prefWidth="154.0"
+                style="-fx-background-radius: 100PX; -fx-background-color: #ff3b49;" text="Register"
+                textFill="#242222"/>
     </HBox>
-   <HBox alignment="bottom_right" prefHeight="30.0" prefWidth="295.0" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="7">
-      <children>
-         <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #ff3b49; -fx-background-radius: 100PX;" text="Login" textFill="#242222" />
-      </children>
-   </HBox>
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
+    <HBox alignment="bottom_right" prefHeight="30.0" prefWidth="295.0" spacing="10" GridPane.columnIndex="2"
+          GridPane.rowIndex="7">
+        <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="26.0"
+                    prefWidth="154.0" style="-fx-background-color: #ff3b49; -fx-background-radius: 100PX;" text="Login"
+                    textFill="#242222"/>
+        </children>
+    </HBox>
+    <columnConstraints>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+    </rowConstraints>
 </GridPane>

@@ -19,8 +19,8 @@ import java.util.Objects;
 
 public class UserService {
 
-    private static List<User> users;
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
+    private static List<User> users;
 
     public static void loadUsersFromFile() throws IOException {
 
@@ -66,15 +66,17 @@ public class UserService {
         return new String(hashedPassword, StandardCharsets.UTF_8)
                 .replace("\"", ""); //to be able to save in JSON format
     }
+
     public static void checkUserCredentials(String username, String password) throws WrongUsernameorPasswordException {
-        int found=0;
+        int found = 0;
         for (User user : users) {
             if (Objects.equals(username, user.getUsername()) && Objects.equals(encodePassword(username, password), user.getPassword()))
                 found = 1;
         }
-        if( found ==0)
+        if (found == 0)
             throw new WrongUsernameorPasswordException();
     }
+
     private static MessageDigest getMessageDigest() {
         MessageDigest md;
         try {

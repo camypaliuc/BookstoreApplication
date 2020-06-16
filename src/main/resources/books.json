@@ -1,0 +1,14 @@
+[
+  {
+    "author": "Dan Brown",
+    "title": "Digital Fortress",
+    "price": 100,
+    "url" : "C:\\Users\\Andrei\\.BookstoreApplication\\config\\DigitalFortress.jpg"
+  },
+  {
+    "author": "Agatha Cristie",
+    "title": "Nemesis",
+    "price": 70 ,
+    "url" : "C:\\Users\\Andrei\\.BookstoreApplication\\config\\Nemesis.jpg"
+  }
+]
