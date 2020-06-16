@@ -1,7 +1,7 @@
 package org.bookstoreapp.model;
 
 
-public class OrderedBook {
+public class gOrderedBook {
 
     private String author;
     private String title;
