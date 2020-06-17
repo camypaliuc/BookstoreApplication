@@ -14,10 +14,11 @@ import javafx.stage.Stage;
 import org.bookstoreapp.exceptions.UsernameAlreadyExistsException;
 import org.bookstoreapp.exceptions.WrongUsernameorPasswordException;
 import org.bookstoreapp.services.UserService;
-
+import org.bookstoreapp.model.User;
 import java.io.IOException;
 
 public class RegistrationController {
+    public static User currentuser;
     @FXML
     private Text registrationMessage;
     @FXML
@@ -45,6 +46,7 @@ public class RegistrationController {
     @FXML
     public void handleLoginAction(ActionEvent event) throws IOException {
         try {
+            currentuser=new User(usernameField.getText(),passwordField.getText(),(String)role.getValue());
             UserService.checkUserCredentials(usernameField.getText(), passwordField.getText());
             Parent home_page_parent = FXMLLoader.load(getClass().getClassLoader().getResource("BookstoreLibrary.fxml"));
             Scene home_page_scene = new Scene(home_page_parent);
