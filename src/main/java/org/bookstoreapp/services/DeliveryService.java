@@ -37,9 +37,8 @@ public class DeliveryService {
         });
     }
 
-    public static void addOrder(String FullName, String DeliveryAdress, String Email, String PhoneNr) {
-
-        orders.add(new Order(FullName, DeliveryAdress, Email, PhoneNr));
+    public static void addOrder(String FullName, String DeliveryAdress, String Email, String PhoneNr, int accepted) {
+        orders.add(new Order(FullName, DeliveryAdress, Email, PhoneNr, 0));
         persistOrders();
     }
 

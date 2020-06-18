@@ -5,18 +5,21 @@ public class Order {
     private String DeliveryAdress;
     private String Email;
     private String PhoneNr;
-
+    private static int accepted;
     public Order(){
 
     }
-
-    public Order(String fullName, String deliveryAdress, String email, String phoneNr) {
+    public Order(String fullName, String deliveryAdress, String email, String phoneNr, int accepted) {
         FullName = fullName;
         DeliveryAdress = deliveryAdress;
         Email = email;
         PhoneNr = phoneNr;
+        accepted=0;
     }
-
+  //  public Order(String fullName, String deliveryAdress, String email, String phoneNr) {
+    //    Order(fullName, deliveryAdress, email, phoneNr, 0);
+   // }
+    public void setAccepted(){accepted=1;}
     public String getFullName() {
         return FullName;
     }
@@ -56,6 +59,7 @@ public class Order {
                 ", DeliveryAdress='" + DeliveryAdress + '\'' +
                 ", Email='" + Email + '\'' +
                 ", PhoneNr='" + PhoneNr + '\'' +
+                ", accepted='" + accepted + '\'' +
                 '}';
     }
 }

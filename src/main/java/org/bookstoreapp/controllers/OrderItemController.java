@@ -28,6 +28,8 @@ public class OrderItemController {
     @FXML
     private TextField phone;
     @FXML
+    private Text deliveryprocessMessage;
+    @FXML
     private AnchorPane deliverybooksPane;
     @FXML
     private VBox deliverybooksVBox;
@@ -51,9 +53,12 @@ public class OrderItemController {
     }
     @FXML
     public void handleApproveButton() {
+        order.setAccepted();
+        deliveryprocessMessage.setText("You have succesfully approved this order!");
     }
     @FXML
     public void handleDenyButton() {
+        deliveryprocessMessage.setText("This order is denyed!");
     }
 
 }

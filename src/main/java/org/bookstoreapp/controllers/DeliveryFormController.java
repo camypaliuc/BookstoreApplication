@@ -53,7 +53,7 @@ public class DeliveryFormController {
 
     @FXML
     public void handleyesButton(ActionEvent event)   throws IOException {
-        DeliveryService.addOrder(fullName.getText(), deliveryAdress.getText(), email.getText(), phoneNr.getText());
+        DeliveryService.addOrder(fullName.getText(), deliveryAdress.getText(), email.getText(), phoneNr.getText(),0);
         orderMessage.setText("Your order was registered succesfully!");
 
         Parent home_page_parent = FXMLLoader.load(getClass().getClassLoader().getResource("BookstoreLibrary.fxml"));
