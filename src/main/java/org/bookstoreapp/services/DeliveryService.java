@@ -7,6 +7,7 @@ import org.bookstoreapp.exceptions.CouldNotWriteOrderException;
 import org.bookstoreapp.exceptions.CouldNotWriteUsersException;
 import org.bookstoreapp.exceptions.UsernameAlreadyExistsException;
 import org.bookstoreapp.exceptions.WrongUsernameorPasswordException;
+import org.bookstoreapp.model.Book;
 import org.bookstoreapp.model.Order;
 import org.bookstoreapp.model.User;
 
@@ -52,5 +53,7 @@ public class DeliveryService {
         }
     }
 
-
+    public static List<Order> getAllOrders() {
+        return orders;
+    }
 }

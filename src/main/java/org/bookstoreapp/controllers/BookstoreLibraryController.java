@@ -63,4 +63,18 @@ public class BookstoreLibraryController {
             rightsMessage.setText("You do not own the rights for this operation!");
         }
     }
+    @FXML
+    public void handleViewOrdersButton(ActionEvent event) throws IOException {
+        if (((String) thisuser.getRole()) == "Admin") {
+            Parent home_page_parent = FXMLLoader.load(getClass().getClassLoader().getResource("OrdersProcessing.fxml"));
+            Scene home_page_scene = new Scene(home_page_parent);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.hide();
+            app_stage.setScene(home_page_scene);
+            app_stage.show();
+        }
+        else {
+            rightsMessage.setText("You do not own the rights for this operation!");
+        }
+    }
 }
