@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="100.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane prefHeight="252.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="202.0" text="Nume: " textAlignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="200.0" text="Adresa" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="201.0" text="Email" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="200.0" text="Telefon" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="240.0" text="Carte:" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#handleDenyButton" text="Deny" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleApproveButton" text="Approve" GridPane.rowIndex="5" />
+            <TextField fx:id="name" GridPane.columnIndex="1" />
+            <TextField fx:id="adress" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="phone" prefHeight="26.0" prefWidth="177.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <AnchorPane fx:id="deliverybooksPane" prefHeight="54.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <VBox fx:id="deliverybooksVBox" layoutX="-10.0" layoutY="24.0" prefHeight="37.0" prefWidth="208.0" />
+               </children>
+            </AnchorPane>
+            <Text fx:id="deliveryprocessMessage" layoutX="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="396.13671875" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -7,6 +7,7 @@ import org.bookstoreapp.exceptions.CouldNotWriteOrderException;
 import org.bookstoreapp.exceptions.CouldNotWriteUsersException;
 import org.bookstoreapp.exceptions.UsernameAlreadyExistsException;
 import org.bookstoreapp.exceptions.WrongUsernameorPasswordException;
+import org.bookstoreapp.model.Book;
 import org.bookstoreapp.model.Order;
 import org.bookstoreapp.model.User;
 
@@ -36,9 +37,8 @@ public class DeliveryService {
         });
     }
 
-    public static void addOrder(String FullName, String DeliveryAdress, String Email, String PhoneNr) {
-
-        orders.add(new Order(FullName, DeliveryAdress, Email, PhoneNr));
+    public static void addOrder(String FullName, String DeliveryAdress, String Email, String PhoneNr, int accepted) {
+        orders.add(new Order(FullName, DeliveryAdress, Email, PhoneNr, 0));
         persistOrders();
     }
 
@@ -52,5 +52,7 @@ public class DeliveryService {
         }
     }
 
-
+    public static List<Order> getAllOrders() {
+        return orders;
+    }
 }
