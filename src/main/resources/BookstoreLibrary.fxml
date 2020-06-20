@@ -15,6 +15,7 @@
         <Button layoutX="110.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleFinishOrderAction" text="FinnishOrder" />
       <Button layoutX="217.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleAddBookButton" text="Add Book" />
       <Button fx:id="vieworders" layoutX="317.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleViewOrdersButton" text="View Orders" />
+      <Button layoutX="440.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleLogOutButton" text="Log Out" />
         <VBox layoutX="-1.0" layoutY="74.0" prefHeight="327.0" prefWidth="600.0">
          <children>
               <AnchorPane fx:id="booksPane" prefHeight="216.0" prefWidth="612.0">
