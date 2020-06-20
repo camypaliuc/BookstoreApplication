@@ -37,11 +37,17 @@ public class DeliveryService {
         });
     }
 
-    public static void addOrder(String FullName, String DeliveryAdress, String Email, String PhoneNr, int accepted) {
-        orders.add(new Order(FullName, DeliveryAdress, Email, PhoneNr, 0));
+    public static void addOrder(String username ,String FullName, String DeliveryAdress, String Email, String PhoneNr, int accepted) {
+        orders.add(new Order(username, FullName, DeliveryAdress, Email, PhoneNr, 0));
         persistOrders();
     }
 
+    public static void updateOrder(String username ,String FullName, String DeliveryAdress, String Email, String PhoneNr, int accepted) {
+        orders.remove("username");
+        persistOrders();
+        orders.add(new Order(username, FullName, DeliveryAdress, Email, PhoneNr, 1));
+        persistOrders();
+    }
 
     private static void persistOrders() {
         try {

@@ -12,8 +12,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.bookstoreapp.model.Book;
+import org.bookstoreapp.model.User;
 import org.bookstoreapp.services.BookService;
 import org.bookstoreapp.services.CartService;
 import org.bookstoreapp.services.DeliveryService;
@@ -23,6 +25,8 @@ import java.util.List;
 
 public class DeliveryFormController {
     @FXML
+    private Text username;
+    @FXML
     private TextField fullName;
     @FXML
     private TextArea deliveryAdress;
@@ -31,15 +35,14 @@ public class DeliveryFormController {
     @FXML
     private TextField phoneNr;
     @FXML
-    private TextField orderMessage;
-    @FXML
     private AnchorPane orderedBooksPane;
     @FXML
     private VBox orderedBooksVBox;
+    public static User thisuser = RegistrationController.currentuser;
     @FXML
     public void initialize() throws IOException {
         List<Book> orderedBooks = CartService.getAllOrderedBooks();
-
+        username.setText(thisuser.getUsername());
         for (Book book : orderedBooks) {
 
             OrderedBookController controller = new OrderedBookController(book);
@@ -53,8 +56,7 @@ public class DeliveryFormController {
 
     @FXML
     public void handleyesButton(ActionEvent event)   throws IOException {
-        DeliveryService.addOrder(fullName.getText(), deliveryAdress.getText(), email.getText(), phoneNr.getText(),0);
-        orderMessage.setText("Your order was registered succesfully!");
+        DeliveryService.addOrder(thisuser.getUsername(),fullName.getText(), deliveryAdress.getText(), email.getText(), phoneNr.getText(),0);
 
         Parent home_page_parent = FXMLLoader.load(getClass().getClassLoader().getResource("BookstoreLibrary.fxml"));
         Scene home_page_scene = new Scene(home_page_parent);

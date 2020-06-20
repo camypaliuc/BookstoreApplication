@@ -11,6 +11,7 @@ import org.bookstoreapp.model.Book;
 import org.bookstoreapp.model.Order;
 import javafx.scene.control.TextField;
 import org.bookstoreapp.services.CartService;
+import org.bookstoreapp.services.DeliveryService;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +20,8 @@ import java.util.List;
 public class OrderItemController {
     private Order order;
     private Book book;
+    @FXML
+    private TextField username;
     @FXML
     private TextField name;
     @FXML
@@ -39,6 +42,7 @@ public class OrderItemController {
     @FXML
     public void initialize() throws IOException {
         List<Book> deliveryBooks = CartService.getAllOrderedBooks();
+        username.setText(order.getUserName());
         name.setText(order.getFullName());
         adress.setText(order.getDeliveryAdress());
         email.setText(order.getEmail());
@@ -54,6 +58,7 @@ public class OrderItemController {
     @FXML
     public void handleApproveButton() {
         order.setAccepted();
+        DeliveryService.updateOrder(username.getText(),name.getText(),adress.getText(),email.getText(),phone.getText(),1);
         deliveryprocessMessage.setText("You have succesfully approved this order!");
     }
     @FXML

@@ -1,24 +1,31 @@
 package org.bookstoreapp.model;
 
 public class Order {
+    private String UserName;
     private String FullName;
     private String DeliveryAdress;
     private String Email;
     private String PhoneNr;
-    private static int accepted;
+    private int accepted;
     public Order(){
 
     }
-    public Order(String fullName, String deliveryAdress, String email, String phoneNr, int accepted) {
+    public Order(String userName, String fullName, String deliveryAdress, String email, String phoneNr, int Accepted) {
+        UserName = userName;
         FullName = fullName;
         DeliveryAdress = deliveryAdress;
         Email = email;
         PhoneNr = phoneNr;
-        accepted=0;
+        accepted= Accepted;
     }
   //  public Order(String fullName, String deliveryAdress, String email, String phoneNr) {
     //    Order(fullName, deliveryAdress, email, phoneNr, 0);
    // }
+
+    public int getAccepted() {
+        return accepted;
+    }
+
     public void setAccepted(){accepted=1;}
     public String getFullName() {
         return FullName;
@@ -52,10 +59,20 @@ public class Order {
         PhoneNr = phoneNr;
     }
 
+    public String getUserName() {
+        return UserName;
+    }
+
+    public void setUserName(String userName) {
+        UserName = userName;
+    }
+
+
     @Override
     public String toString() {
         return "Order{" +
-                "FullName='" + FullName + '\'' +
+                "UserName='" +UserName + '\'' +
+                ",FullName='" + FullName + '\'' +
                 ", DeliveryAdress='" + DeliveryAdress + '\'' +
                 ", Email='" + Email + '\'' +
                 ", PhoneNr='" + PhoneNr + '\'' +
