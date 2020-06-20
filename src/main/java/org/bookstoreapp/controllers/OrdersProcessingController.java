@@ -31,6 +31,8 @@ public class OrdersProcessingController {
     @FXML
     public void initialize() throws IOException {
         List<Order> orders = DeliveryService.getAllOrders();
+        BookService.loadBooksFromFile();
+        DeliveryService.loadOrdersFromFile();
 
         for (Order order : orders) {
             OrderItemController controller = new OrderItemController(order);
