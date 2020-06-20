@@ -47,7 +47,6 @@ public class BookController {
         priceNumber.setText(String.valueOf(book.getPrice()));
         imageFile = new File(String.valueOf(book.getUrl()));
         if (imageFile.exists()) {
-            ImageView imageView = new ImageView();
             Image image = new Image(imageFile.toURI().toString());
             imageView.setImage(image);
         }
