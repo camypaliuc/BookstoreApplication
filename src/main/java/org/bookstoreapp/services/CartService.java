@@ -15,11 +15,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class
-CartService {
+public class CartService {
     private static final Path BOOKS_PATH = FileSystemService.getPathToFile("config", "books.json");
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
-    private static List<Book> Cartbooks = new ArrayList<>();
+     static List<Book> Cartbooks = new ArrayList<>();
 
 
     public static void AddBooktoCart(Book e){
