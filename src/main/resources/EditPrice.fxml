@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="91.0" prefWidth="244.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bookstoreapp.controllers.EditPriceController">
+   <children>
+      <TextField fx:id="newPrice" layoutX="48.0" layoutY="14.0" />
+      <Button layoutX="87.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleFinishEditButton" prefHeight="26.0" prefWidth="78.0" text="FinishEdit" />
+   </children>
+</AnchorPane>
