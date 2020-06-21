@@ -20,13 +20,13 @@ import java.io.IOException;
 public class RegistrationController {
     public static User currentuser;
     @FXML
-    private Text registrationMessage;
+    public Text registrationMessage;
     @FXML
-    private PasswordField passwordField;
+    public PasswordField passwordField;
     @FXML
-    private TextField usernameField;
+    public TextField usernameField;
     @FXML
-    private ChoiceBox role;
+    public ChoiceBox role;
 
     @FXML
     public void initialize() {

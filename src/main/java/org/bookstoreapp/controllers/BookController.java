@@ -25,11 +25,11 @@ public class BookController {
     private Book book;
 
     @FXML
-    private Text author;
+    public Text author;
     @FXML
-    private Text title;
+    public Text title;
     @FXML
-    private Text priceNumber;
+    public Text priceNumber;
     @FXML
     private ImageView imageView;
     private File imageFile ;
@@ -37,6 +37,10 @@ public class BookController {
 
     public BookController(Book book) {
         this.book = book;
+    }
+
+    public BookController() {
+
     }
 
     @FXML

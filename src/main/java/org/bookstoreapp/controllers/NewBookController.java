@@ -12,13 +12,13 @@ import org.bookstoreapp.services.BookService;
 import java.io.IOException;
 public class NewBookController {
     @FXML
-    private TextField title;
+    public TextField title;
     @FXML
-    private TextField author;
+    public TextField author;
     @FXML
-    private TextField price;
+    public TextField price;
     @FXML
-    private TextField imageurl;
+    public TextField imageurl;
     @FXML
     public void initialize() {
     }

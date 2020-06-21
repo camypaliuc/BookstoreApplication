@@ -19,8 +19,8 @@ import java.util.Objects;
 
 public class UserService {
 
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
-    private static List<User> users;
+     static  Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
+     static List<User> users;
 
     public static void loadUsersFromFile() throws IOException {
 
@@ -86,5 +86,7 @@ public class UserService {
         }
         return md;
     }
-
+    public static List<User> getUsers() {
+        return users;
+    }
 }
