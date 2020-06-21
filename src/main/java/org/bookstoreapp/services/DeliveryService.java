@@ -22,8 +22,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class DeliveryService {
-    private static final Path ORDERS_PATH = FileSystemService.getPathToFile("config", "orders.json");
-    private static List<Order> orders= new ArrayList<>();
+     static  Path ORDERS_PATH = FileSystemService.getPathToFile("config", "orders.json");
+     static List<Order> orders= new ArrayList<>();
 
     public static void loadOrdersFromFile() throws IOException {
 

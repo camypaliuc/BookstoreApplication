@@ -15,7 +15,9 @@ import java.util.List;
 
 
 public class BookService {
-     static  Path BOOKS_PATH = FileSystemService.getPathToFile("config", "books.json");
+
+     static Path BOOKS_PATH = FileSystemService.getPathToFile("config", "books.json");
+
      static List<Book> books;
 
     public static void loadBooksFromFile() throws IOException {
