@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 
 public class FileSystemService {
     public static String APPLICATION_FOLDER = ".BookstoreApplication";
+
     private static final String USER_FOLDER = System.getProperty("user.home");
     public static final Path APPLICATION_HOME_PATH = Paths.get(USER_FOLDER, APPLICATION_FOLDER);
 

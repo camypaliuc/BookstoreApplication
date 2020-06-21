@@ -86,5 +86,7 @@ public class UserService {
         }
         return md;
     }
-
+    public static List<User> getUsers() {
+        return users;
+    }
 }
